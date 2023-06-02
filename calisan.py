@@ -28,9 +28,9 @@ class Calisan(ins.Insan): # insan sınıfından miras alındı
         if self.__tecrube < 24: # tecrübe 24'ten küçükse
             return 0 # 0 döndür
         elif self.__tecrube >= 24 and self.__tecrube <= 48 and self.__maas < 15000: # tecrübe 24 ile 48 arasındaysa ve maaş 15000'den küçükse
-            return (self.__maas%self.__tecrube) / 100 # maaşın tecrübe ile çarpımını döndür
+            return self.__maas%self.__tecrube # maaşın tecrübe ile çarpımını döndür
         elif self.__tecrube > 48 and self.__maas < 25000:
-            return (self.__maas%self.__tecrube) / 200
+            return (self.__maas%self.__tecrube) / 2
         else:
             return 0
         

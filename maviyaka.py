@@ -15,9 +15,9 @@ class MaviYaka(cal.Calisan): # calisan sınıfından miras alındı
         if self.tecrube_al() < 24: # tecrübe 24'ten küçükse
             return self.__yipranma_payi * 10 # yıpranma payının 10 katını döndür
         elif self.tecrube_al() >= 24 and self.tecrube_al() <= 48 and self.maas_al() < 15000: # tecrübe 24 ile 48 arasındaysa ve maaş 15000'den küçükse
-            return ((self.maas_al()%self.tecrube_al())/2 + self.__yipranma_payi * 10)/100 # maaşın tecrübe ile çarpımını döndür
+            return (self.maas_al()%self.tecrube_al())/2 + self.__yipranma_payi * 10 # maaşın tecrübe ile çarpımını döndür
         elif self.tecrube_al() > 48 and self.maas_al() < 25000:
-            return ((self.maas_al()%self.tecrube_al())/3 + self.__yipranma_payi * 10)/100
+            return (self.maas_al()%self.tecrube_al())/3 + self.__yipranma_payi * 10
         else:
             return 0
         
