@@ -49,6 +49,20 @@ def main():
         print(beyazyaka1)
         print(beyazyaka2)
         print(beyazyaka3)
+        # Çalışanların bilgilerini bir sözlükte topluyoruz.
+        bilgiler = {"nesne": ["calisan", "calisan", "calisan", "maviyaka", "maviyaka", "maviyaka", "beyazyaka", "beyazyaka", "beyazyaka"],
+                    "tc_no": [calisan1.tc_al(), calisan2.tc_al(), calisan3.tc_al(), maviyaka1.tc_al(), maviyaka2.tc_al(), maviyaka3.tc_al(), beyazyaka1.tc_al(), beyazyaka2.tc_al(), beyazyaka3.tc_al()],
+                    "ad": [calisan1.ad_al(), calisan2.ad_al(), calisan3.ad_al(), maviyaka1.ad_al(), maviyaka2.ad_al(), maviyaka3.ad_al(), beyazyaka1.ad_al(), beyazyaka2.ad_al(), beyazyaka3.ad_al()],
+                    "soyad": [calisan1.soyad_al(), calisan2.soyad_al(), calisan3.soyad_al(), maviyaka1.soyad_al(), maviyaka2.soyad_al(), maviyaka3.soyad_al(), beyazyaka1.soyad_al(), beyazyaka2.soyad_al(), beyazyaka3.soyad_al()],
+                    "yas": [calisan1.yas_al(), calisan2.yas_al(), calisan3.yas_al(), maviyaka1.yas_al(), maviyaka2.yas_al(), maviyaka3.yas_al(), beyazyaka1.yas_al(), beyazyaka2.yas_al(), beyazyaka3.yas_al()],
+                    "cinsiyet": [calisan1.cinsiyet_al(), calisan2.cinsiyet_al(), calisan3.cinsiyet_al(), maviyaka1.cinsiyet_al(), maviyaka2.cinsiyet_al(), maviyaka3.cinsiyet_al(), beyazyaka1.cinsiyet_al(), beyazyaka2.cinsiyet_al(), beyazyaka3.cinsiyet_al()],
+                    "uyruk": [calisan1.uyruk_al(), calisan2.uyruk_al(), calisan3.uyruk_al(), maviyaka1.uyruk_al(), maviyaka2.uyruk_al(), maviyaka3.uyruk_al(), beyazyaka1.uyruk_al(), beyazyaka2.uyruk_al(), beyazyaka3.uyruk_al()],
+                    "sektor": [calisan1.sektor_al(), calisan2.sektor_al(), calisan3.sektor_al(), maviyaka1.sektor_al(), maviyaka2.sektor_al(), maviyaka3.sektor_al(), beyazyaka1.sektor_al(), beyazyaka2.sektor_al(), beyazyaka3.sektor_al()],
+                    "tecrube": [calisan1.tecrube_al(), calisan2.tecrube_al(), calisan3.tecrube_al(), maviyaka1.tecrube_al(), maviyaka2.tecrube_al(), maviyaka3.tecrube_al(), beyazyaka1.tecrube_al(), beyazyaka2.tecrube_al(), beyazyaka3.tecrube_al()],
+                    "maas": [calisan1.maas_al(), calisan2.maas_al(), calisan3.maas_al(), maviyaka1.maas_al(), maviyaka2.maas_al(), maviyaka3.maas_al(), beyazyaka1.maas_al(), beyazyaka2.maas_al(), beyazyaka3.maas_al()],
+                    "yipranma_payi": [0, 0, 0, maviyaka1.yipranma_payi_al(), maviyaka2.yipranma_payi_al(), maviyaka3.yipranma_payi_al(), 0, 0, 0],
+                    "tesvik_primi": [0, 0, 0, 0, 0, 0, beyazyaka1.tesvik_primi_al(), beyazyaka2.tesvik_primi_al(), beyazyaka3.tesvik_primi_al()],
+                    "yeni_maas": [calisan1.maas_al() + calisan1.maas_al()*calisan1.zam_hakki(), calisan2.maas_al() + calisan2.maas_al()*calisan2.zam_hakki(), calisan3.maas_al() + calisan3.maas_al()*calisan3.zam_hakki(), maviyaka1.maas_al() + maviyaka1.maas_al()*maviyaka1.zam_hakki(), maviyaka2.maas_al() + maviyaka2.maas_al()*maviyaka2.zam_hakki(), maviyaka3.maas_al() + maviyaka3.maas_al()*maviyaka3.zam_hakki(), beyazyaka1.maas_al() + beyazyaka1.zam_hakki(), beyazyaka2.maas_al() + beyazyaka2.zam_hakki(), beyazyaka3.maas_al() + beyazyaka3.zam_hakki()]}
     except Exception as e:
         print("Hata: ", e)
 
