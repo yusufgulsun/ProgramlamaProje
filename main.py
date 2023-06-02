@@ -77,8 +77,10 @@ def main():
         print(dataframe2)
         dataframe2 = dataframe1[["ad", "soyad", "sektor", "yeni_maas"]] # Ad, soyad, sektor ve yeni_maas bilgileri
         print(dataframe2)
+
     except Exception as e:
         print("Hata: ", e)
+
 
 if __name__ == "__main__":
     main()
