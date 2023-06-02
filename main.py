@@ -6,3 +6,6 @@ import beyazyaka as beyaz # beyazyaka.py dosyasını import ediyoruz.
 import pandas as pd # pandas kütüphanesini import ediyoruz.
 
 def main():
+if __name__ == "__main__":
+    main()
+input()
