@@ -6,6 +6,10 @@ import beyazyaka as beyaz # beyazyaka.py dosyasını import ediyoruz.
 import pandas as pd # pandas kütüphanesini import ediyoruz.
 
 def main():
+    try:
+    except Exception as e:
+        print("Hata: ", e)
+
 if __name__ == "__main__":
     main()
 input()
