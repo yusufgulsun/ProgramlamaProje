@@ -19,5 +19,21 @@ class Issiz(ins.Insan): # insan sınıfından miras alındı
         self.__tecrube = tecrube
 
     def statu_bul(self): # statü bulmak için
+        try:
+            maviyaka_kat = self.__maviyaka * 20 / 100 # mavi yaka katkısı
+            beyazyaka_kat = self.__beyazyaka * 35 / 100 # beyaz yaka katkısı
+            yonetici_kat = self.__yonetici * 45 / 100 # yönetici katkısı
+            liste_kat = [maviyaka_kat, beyazyaka_kat, yonetici_kat] # katkıları listeye ekle
+            max_kat = max(liste_kat) # en yüksek katkıyı bul
+            if max_kat == yonetici_kat: # en yüksek katkı yönetici katkısı ise
+                self.__statu = "Yönetici"
+            elif max_kat == beyazyaka_kat: # en yüksek katkı beyaz yaka katkısı ise
+                self.__statu = "Beyaz Yaka"
+            elif max_kat == maviyaka_kat: # en yüksek katkı mavi yaka katkısı ise
+                self.__statu = "Mavi Yaka"
+            return self.__statu
+        except:
+            print("Bulunamadı.")
+
     def __str__(self): # insan sınıfının özelliklerini yazdırmak için
         return f"tc: {self.tc_al()}\nad: {self.ad_al()}\nsoyad: {self.soyad_al()}\nstatusu: {self.statu_bul()}"
