@@ -49,6 +49,7 @@ def main():
         print(beyazyaka1)
         print(beyazyaka2)
         print(beyazyaka3)
+
         # Çalışanların bilgilerini bir sözlükte topluyoruz.
         bilgiler = {"nesne": ["calisan", "calisan", "calisan", "maviyaka", "maviyaka", "maviyaka", "beyazyaka", "beyazyaka", "beyazyaka"],
                     "tc_no": [calisan1.tc_al(), calisan2.tc_al(), calisan3.tc_al(), maviyaka1.tc_al(), maviyaka2.tc_al(), maviyaka3.tc_al(), beyazyaka1.tc_al(), beyazyaka2.tc_al(), beyazyaka3.tc_al()],
@@ -63,6 +64,19 @@ def main():
                     "yipranma_payi": [0, 0, 0, maviyaka1.yipranma_payi_al(), maviyaka2.yipranma_payi_al(), maviyaka3.yipranma_payi_al(), 0, 0, 0],
                     "tesvik_primi": [0, 0, 0, 0, 0, 0, beyazyaka1.tesvik_primi_al(), beyazyaka2.tesvik_primi_al(), beyazyaka3.tesvik_primi_al()],
                     "yeni_maas": [calisan1.maas_al() + calisan1.maas_al()*calisan1.zam_hakki(), calisan2.maas_al() + calisan2.maas_al()*calisan2.zam_hakki(), calisan3.maas_al() + calisan3.maas_al()*calisan3.zam_hakki(), maviyaka1.maas_al() + maviyaka1.maas_al()*maviyaka1.zam_hakki(), maviyaka2.maas_al() + maviyaka2.maas_al()*maviyaka2.zam_hakki(), maviyaka3.maas_al() + maviyaka3.maas_al()*maviyaka3.zam_hakki(), beyazyaka1.maas_al() + beyazyaka1.zam_hakki(), beyazyaka2.maas_al() + beyazyaka2.zam_hakki(), beyazyaka3.maas_al() + beyazyaka3.zam_hakki()]}
+        dataframe1 = pd.DataFrame(bilgiler) # Verileri dataframe'e aktarma
+        dataframe2 = dataframe1.groupby("nesne")[["tecrube", "yeni_maas"]] # Nesneye göre gruplama
+        print(dataframe2.mean())
+        dataframe2 = dataframe1[ dataframe1.maas > 15000] # Maaşı 15000TL üzerinde olanların listesi
+        print("Maaşı 15000TL üzerinde olanların toplam sayısı: ", len(dataframe2))
+        dataframe2 = dataframe1.sort_values(by="yeni_maas") # Yeni maaşa göre sıralama
+        print(dataframe2)
+        dataframe2 = dataframe1[ (dataframe1.nesne == "beyazyaka") & (dataframe1.tecrube > 36)] # Beyaz yaka çalışanların tecrübesi 3 yıldan fazla olanların listesi
+        print(dataframe2)        
+        dataframe2 = dataframe1[dataframe1.yeni_maas > 10000][2:5][["tc_no", "yeni_maas"]] # Yeni maaşı 10000TL üzerinde olanların 2. ve 5. sıradaki tc_no ve yeni_maas bilgileri
+        print(dataframe2)
+        dataframe2 = dataframe1[["ad", "soyad", "sektor", "yeni_maas"]] # Ad, soyad, sektor ve yeni_maas bilgileri
+        print(dataframe2)
     except Exception as e:
         print("Hata: ", e)
 
